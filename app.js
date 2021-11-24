@@ -8,7 +8,7 @@ const express = require("express"),
 
   // Connection to DB
 mongoose.connect(
-  'mongodb+srv://lauti573:4xwtDXuANUATnhBF@cluster0.utwtn.mongodb.net/gmaps?retryWrites=true&w=majority',
+  'mongodb+srv://micaela:orfali@cluster0.jr9xp.mongodb.net/gmaps?retryWrites=true&w=majority',
   { useNewUrlParser: true, useUnifiedTopology: true },
   function (err, res) {
       try {
