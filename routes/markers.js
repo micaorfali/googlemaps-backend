@@ -46,7 +46,23 @@ const editMarker = (req, res) => {
         marker.descripcion = req.body.descripcion;
         marker.lat = req.body.lat;
         marker.lng = req.body.lng;
-        marker.type = req.body.type;
+        let categoria
+        if(req.body.type == "Arte y Cultura"){
+            categoria = "arteycultura";
+        }else if(req.body.type == "Monumentos"){
+            categoria = "monumentos"
+        } else if(req.body.type == "Parques-Plazas"){
+            categoria = "parques-plazas";
+        }else if(req.body.type == "Gubernamentales"){
+            categoria = "gubernamentales"
+        }else if(req.body.type == "Compras"){
+            categoria = "compras";
+        }else if(req.body.type == "Gastronomía"){
+            categoria = "gastronomia"
+        }else if(req.body.type == "Patrimonio Nacional"){
+            categoria = "patrimonionacional"
+        }
+        marker.type = categoria;
         marker.save((err) => {
             if(!err) {
                 console.log('Actualizado')
